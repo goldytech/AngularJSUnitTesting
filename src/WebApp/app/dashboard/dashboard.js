@@ -1,9 +1,10 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'dashboard';
-    angular.module('app').controller(controllerId, ['common', 'datacontext', dashboard]);
+    angular.module('app').controller(controllerId, Dashboard);
 
-    function dashboard(common, datacontext) {
+    Dashboard.$inject = ['common', 'datacontext'];
+    function Dashboard(common, datacontext) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
